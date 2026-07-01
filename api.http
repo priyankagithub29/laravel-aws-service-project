@@ -1,13 +1,13 @@
 # ### Register a User
-POST http://127.0.0.1:8000/api/auth/register
-Content-Type: application/json
+# POST http://127.0.0.1:8000/api/auth/register
+# Content-Type: application/json
 
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "password123",
-  "role": "user"
-}
+# {
+#   "name": "John Doe",
+#   "email": "john@example.com",
+#   "password": "password123",
+#   "role": "user"
+# }
 
 ## Login User
 POST http://127.0.0.1:8000/api/auth/login
