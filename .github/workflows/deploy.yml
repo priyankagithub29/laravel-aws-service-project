@@ -22,9 +22,16 @@ jobs:
         port: 22
         script: |
           cd /var/www/laravel-aws-app
-          git pull origin main
-          composer install --no-dev --optimize-autoloader
-          php artisan migrate --force
+          
+          # 1. Server par permissions check aur fix karein taaki pull block na ho
+          sudo chown -R ec2-user:nginx /var/www/laravel-aws-app
+          
+          # 2. Hard pull karein (Force reset aur pull)
+          git fetch --all
+          git reset --hard origin/main
+          git pull origin main --force
+          
+          # 3. Cache completely clear karein
+          php artisan config:clear
+          php artisan cache:clear
           php artisan config:cache
-          php artisan route:cache
-          php artisan view:cache
