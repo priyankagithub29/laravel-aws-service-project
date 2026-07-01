@@ -28,8 +28,8 @@ jobs:
           
           # 2. Hard pull karein (Force reset aur pull)
           git fetch --all
-          git reset --hard origin/main
-          git pull origin main --force
+          git reset --hard origin/master
+          git pull origin master --force
           
           # 3. Cache completely clear karein
           php artisan config:clear
