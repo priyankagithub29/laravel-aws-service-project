@@ -1,0 +1,40 @@
+# ### Register a User
+# POST http://127.0.0.1:8000/api/auth/register
+# Content-Type: application/json
+
+# {
+#   "name": "John Doe",
+#   "email": "john@example.com",
+#   "password": "password123",
+#   "role": "user"
+# }
+
+### Login User
+# POST http://127.0.0.1:8000/api/auth/login
+# Content-Type: application/json
+
+# {
+#   "email": "john@example.com",
+#   "password": "password123"
+# }
+
+
+POST http://127.0.0.1:8000/api/file/upload
+Accept: application/json
+Content-Type: multipart/form-data; boundary=WebkitBoundary
+
+--WebkitBoundary
+Content-Disposition: form-data; name="file"; filename="test.png"
+Content-Type: image/png
+
+< ./test.png
+--WebkitBoundary--
+
+
+### Download Link for a File
+POST http://127.0.0.1:8000/api/file/download-link
+Content-Type: application/json
+
+{
+  "file_path": "uploads/1782477486_test.png" 
+}
