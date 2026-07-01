@@ -45,7 +45,6 @@ Route::get('/user/profile', function () {
 Route::post('/file/upload', 'FileUploadController@upload');
 Route::post('/file/download-link', 'FileUploadController@getDownloadUrl');
 
-// Route::post('/file/upload', 'FileUploadController@upload')->middleware(['auth:api', 'role:user,admin']);
 // Group routes that require a logged-in JWT user
 // Route::middleware(['auth:api'])->group(function () {
     
